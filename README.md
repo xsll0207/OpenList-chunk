@@ -157,3 +157,19 @@ We sincerely thank the author [Xhofe](https://github.com/Xhofe) of the original 
 Thanks goes to these wonderful people:
 
 [![Contributors](https://contrib.rocks/image?repo=OpenListTeam/OpenList)](https://github.com/OpenListTeam/OpenList/graphs/contributors)
+
+## Recent Updates (V12 - 2025-12-15)
+
+### 1. Robust Chunked Upload Protocol V2
+- **Zero-Block Hash Calculation**: Implemented incremental non-blocking `xxHash64` calculation on the frontend, ensuring the UI remains responsive even for very large files.
+- **Double Integrity Check**:
+  - **Per-Chunk**: CRC32 verification for every uploaded chunk with automatic 3x retry mechanism.
+  - **Final Merge**: Server verifies the final file's `xxHash64` against the client's local calculation to ensure absolute data consistency.
+- **Visual Feedback**: Real-time console logs for CRC verification and hashing status ("Verifying local hash...").
+
+### 2. Automated Cleanup System
+- **Immediate Cleanup**: Temporary chunk directories are immediately deleted upon successful merge or explicit failure.
+- **Background Guard**: Added a background cron task (running every 10 minutes) to automatically clean up stale chunk directories that have been abandoned for more than 30 minutes, preventing disk space accumulation from interrupted uploads.
+
+### 3. Localization
+- **Chinese Support**: Comprehensive Simplified Chinese localization for all settings, driver configurations, and UI elements.
