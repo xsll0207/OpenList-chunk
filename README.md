@@ -27,7 +27,7 @@
 ### 2. 体验修复
 *   修复了简体中文 (zh-CN) 无法正确加载的问题。
 *   **WebDAV** 和 **Stream 模式** 未做改动，保持原版逻辑。
-
+https://github.com/LusiyAvA/OpenList-chunk/blob/main/%E6%BC%94%E7%A4%BA%E5%9B%BE.png
 ---
 
 ## ⚙️ 部署指南
